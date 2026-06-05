@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="NCC photo placeholder">
+  <rect width="900" height="1000" fill="#ecfdf5"/>
+  <rect x="120" y="120" width="660" height="760" rx="18" fill="#14532d"/>
+  <circle cx="450" cy="330" r="130" fill="#f8fafc"/>
+  <path d="M210 860c38-250 205-376 240-376s202 126 240 376" fill="#166534"/>
+  <text x="450" y="940" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#0f172a">NCC Uniform Photo</text>
+</svg>
