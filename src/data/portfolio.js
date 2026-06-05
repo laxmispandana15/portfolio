@@ -8,7 +8,7 @@ export const portfolio = {
   assets: {
     profilePhoto: '/assets/images/profile.jpeg',
     nccPhoto: '/assets/images/ncc.jpeg',
-    resumePdf: '/assets/documents/resume.pdf',
+    resumePdf: '"C:\\Users\\spand\\OneDrive\\Documents\\Desktop\\resume\\resume.pdf"',
     nccCertificatePdf: 'https://drive.google.com/file/d/1ockyhjuC_zr38cbD38qaAHiY4Hx1X1HU/view?usp=drivesdk',
   },
   contact: {

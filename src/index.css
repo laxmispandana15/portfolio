@@ -101,9 +101,16 @@ button { cursor: pointer; }
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  font-weight: 800;
+  overflow: hidden;
+  background: var(--surface-strong);
+  border: 2px solid var(--surface-strong);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+}
+
+.brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 nav { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
