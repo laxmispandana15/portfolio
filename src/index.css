@@ -281,7 +281,12 @@ h1 {
 
 .resume-card { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 16px; align-items: center; }
 .resume-card iframe { width: 100%; height: 340px; border: 1px solid var(--line); border-radius: 8px; background: white; }
-.resume-card .primary-button { justify-self: start; }
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-self: start;
+}
 
 .contact-list { display: grid; gap: 10px; align-content: start; }
 .contact-list a {
@@ -346,7 +351,7 @@ footer a { color: var(--heading); font-weight: 800; }
   .about-grid, .ncc-grid, .contact-grid { gap: 14px; }
   .about-grid > .glass-card, .timeline-card, .experience-card, .publication-card, .resume-card, .contact-form { padding: 18px; }
   .skills-grid, .project-grid, .achievement-grid { grid-template-columns: 1fr; }
-  .hero-actions a, .card-actions a { width: 100%; }
+  .hero-actions a, .card-actions a, .resume-actions a { width: 100%; }
   .resume-card iframe { height: 280px; }
   footer { flex-direction: column; align-items: flex-start; }
 }

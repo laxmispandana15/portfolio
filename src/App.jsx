@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FiArrowUp, FiDownload, FiExternalLink } from 'react-icons/fi'
+import { FiArrowUp, FiDownload, FiExternalLink, FiEye } from 'react-icons/fi'
 import { AchievementCard, GlassCard, ProjectCard } from './components/Cards'
 import { ContactForm } from './components/ContactForm'
 import { Hero } from './components/Hero'
@@ -129,7 +129,10 @@ function App() {
               <p>Preview or download the configured resume file from the public assets folder.</p>
             </div>
             <iframe title="Resume preview" src={portfolio.assets.resumePdf} />
-            <a className="primary-button" href={portfolio.assets.resumePdf} download><FiDownload /> Download Resume</a>
+            <div className="resume-actions">
+              <a className="ghost-button" href={portfolio.assets.resumePdf} target="_blank" rel="noreferrer"><FiEye /> View Resume</a>
+              <a className="primary-button" href={portfolio.assets.resumePdf} download><FiDownload /> Download Resume</a>
+            </div>
           </GlassCard>
         </Section>
 
