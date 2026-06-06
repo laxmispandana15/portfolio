@@ -59,7 +59,7 @@ button, input, textarea { font: inherit; }
 button { cursor: pointer; }
 
 .loader-screen {
-  min-height: 100vh;
+  min-height: 72vh;
   display: grid;
   place-content: center;
   gap: 18px;
@@ -138,19 +138,19 @@ main, footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 
 .hero-section {
   position: relative;
-  min-height: clamp(520px, 74vh, 660px);
+  min-height: clamp(470px, 66vh, 580px);
   display: grid;
   place-items: center;
   align-content: center;
-  gap: 16px;
-  padding: 42px 0 36px;
+  gap: 13px;
+  padding: 28px 0 26px;
   text-align: center;
 }
 
 .animated-bg {
   position: absolute;
   inset: 8% 0 auto;
-  height: 340px;
+  height: 300px;
   border-radius: 999px;
   background: linear-gradient(120deg, rgba(37, 99, 235, 0.18), rgba(15, 118, 110, 0.18), rgba(194, 65, 12, 0.12));
   filter: blur(42px);
@@ -159,7 +159,7 @@ main, footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
 }
 
 .profile-photo {
-  width: clamp(132px, 17vw, 190px);
+  width: clamp(120px, 15vw, 170px);
   aspect-ratio: 1;
   border-radius: 999px;
   object-fit: cover;
@@ -186,12 +186,12 @@ h1 {
   white-space: nowrap;
 }
 .hero-copy h2 {
-  margin: 12px 0;
+  margin: 9px 0;
   color: var(--accent-2);
   font-size: clamp(0.98rem, 2vw, 1.32rem);
   font-weight: 800;
 }
-.hero-copy p:last-child { color: var(--muted); font-size: clamp(0.95rem, 1.6vw, 1.05rem); line-height: 1.6; }
+.hero-copy p:last-child { color: var(--muted); font-size: clamp(0.92rem, 1.45vw, 1rem); line-height: 1.5; }
 
 .hero-actions, .card-actions, footer div { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .primary-button, .ghost-button, .card-actions a {
@@ -208,8 +208,8 @@ h1 {
 .ghost-button, .card-actions a { padding: 9px 13px; color: var(--heading); border: 1px solid var(--line); background: var(--surface); }
 .primary-button:hover, .ghost-button:hover, .card-actions a:hover { transform: translateY(-2px); }
 
-.section { padding: 54px 0; scroll-margin-top: 96px; }
-.section-heading { max-width: 720px; margin-bottom: 20px; }
+.section { padding: 42px 0; scroll-margin-top: 88px; }
+.section-heading { max-width: 720px; margin-bottom: 16px; }
 .section-heading h2 { color: var(--heading); margin-top: 7px; font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.08; letter-spacing: 0; }
 
 .glass-card {
@@ -220,10 +220,17 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.about-grid, .ncc-grid, .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr); gap: 18px; align-items: stretch; }
+.about-grid { display: grid; gap: 14px; align-items: start; }
+.ncc-grid, .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr); gap: 18px; align-items: stretch; }
 .about-grid > .glass-card, .timeline-card, .experience-card, .publication-card, .resume-card, .contact-form { padding: 22px; }
 .large-text { color: var(--heading); font-size: clamp(0.95rem, 1.5vw, 1.08rem); line-height: 1.6; }
-.timeline { display: grid; gap: 12px; }
+.about-summary {
+  color: var(--heading);
+  font-size: clamp(0.98rem, 1.45vw, 1.08rem);
+  line-height: 1.65;
+  max-width: 900px;
+}
+.timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
 .timeline-card h3, .skill-card h3, .experience-card h3, .project-card h3, .publication-card h3, .resume-card h3, .contact-form label, .ncc-grid h3 {
   color: var(--heading);
@@ -249,6 +256,14 @@ h1 {
 }
 
 .experience-card ul { margin: 12px 0 0; padding-left: 18px; }
+.experience-card {
+  padding: 18px;
+}
+.experience-card h3 {
+  font-size: clamp(0.92rem, 2vw, 1.02rem);
+  line-height: 1.25;
+  white-space: nowrap;
+}
 .project-card { display: flex; flex-direction: column; overflow: hidden; padding-top: 4px; }
 .project-card > div:not(.card-actions) { padding: 18px 18px 0; }
 .project-card .card-actions { justify-content: flex-start; margin-top: auto; padding: 16px 18px 18px; }
@@ -313,7 +328,18 @@ h1 {
   outline: 0;
 }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.14); }
-.form-status { color: var(--muted); }
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+.form-status {
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-weight: 750;
+}
+.form-status.loading { color: var(--muted); background: rgba(127, 127, 127, 0.08); }
+.form-status.success { color: #047857; background: rgba(16, 185, 129, 0.12); }
+.form-status.error { color: #b91c1c; background: rgba(239, 68, 68, 0.12); }
 
 footer {
   padding: 24px 0 32px;
@@ -334,20 +360,22 @@ footer a { color: var(--heading); font-weight: 800; }
   .nav-shell { align-items: flex-start; border-radius: 24px; flex-wrap: wrap; }
   nav { order: 3; width: 100%; }
   .about-grid, .ncc-grid, .contact-grid, .resume-card { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr; }
   .skills-grid, .project-grid, .achievement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .experience-card h3 { white-space: normal; }
 }
 
 @media (max-width: 620px) {
   :root { font-size: 14.5px; }
   main, footer, .nav-shell { width: min(100% - 22px, 1120px); }
-  .hero-section { min-height: 72vh; gap: 14px; padding: 34px 0 30px; }
-  .profile-photo { width: clamp(116px, 32vw, 150px); }
+  .hero-section { min-height: auto; gap: 12px; padding: 28px 0 24px; }
+  .profile-photo { width: clamp(108px, 30vw, 136px); }
   h1 { font-size: clamp(1.35rem, 7.7vw, 1.95rem); }
   .hero-copy h2 { font-size: 0.92rem; margin: 10px 0; }
   .hero-copy p:last-child { font-size: 0.9rem; line-height: 1.5; }
   nav a { font-size: 0.8rem; padding: 6px 8px; }
-  .section { padding: 40px 0; }
-  .section-heading { margin-bottom: 16px; }
+  .section { padding: 32px 0; }
+  .section-heading { margin-bottom: 12px; }
   .about-grid, .ncc-grid, .contact-grid { gap: 14px; }
   .about-grid > .glass-card, .timeline-card, .experience-card, .publication-card, .resume-card, .contact-form { padding: 18px; }
   .skills-grid, .project-grid, .achievement-grid { grid-template-columns: 1fr; }

@@ -36,11 +36,9 @@ function App() {
       <main>
         <Hero data={portfolio} />
 
-        <Section id="about" eyebrow="About Me" title="Research-minded developer with product instincts">
+        <Section id="about" eyebrow="About Me">
           <div className="about-grid">
-            <GlassCard>
-              <p className="large-text">{portfolio.summary}</p>
-            </GlassCard>
+            <p className="about-summary">{portfolio.summary}</p>
             <div className="timeline">
               {portfolio.education.map((item) => (
                 <GlassCard key={`${item.title}-${item.place}`} className="timeline-card">

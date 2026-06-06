@@ -3,7 +3,8 @@ import emailjs from '@emailjs/browser'
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiSend } from 'react-icons/fi'
 
 export function ContactForm({ data }) {
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [isSending, setIsSending] = useState(false)
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -11,17 +12,25 @@ export function ContactForm({ data }) {
     const { serviceId, templateId, publicKey } = data.emailjs
 
     if ([serviceId, templateId, publicKey].some((value) => value.startsWith('YOUR_'))) {
-      setStatus('Add your EmailJS credentials in src/data/portfolio.js to enable sending.')
+      setStatus({
+        type: 'error',
+        message: 'Add your EmailJS service ID, template ID, and public key in src/data/portfolio.js.',
+      })
       return
     }
 
     try {
-      setStatus('Sending...')
+      setIsSending(true)
+      setStatus({ type: 'loading', message: 'Sending message...' })
+
       await emailjs.sendForm(serviceId, templateId, form, { publicKey })
+
       form.reset()
-      setStatus('Message sent successfully.')
+      setStatus({ type: 'success', message: 'Message sent successfully.' })
     } catch {
-      setStatus('Message could not be sent. Please try email directly.')
+      setStatus({ type: 'error', message: 'Message could not be sent. Please try email directly.' })
+    } finally {
+      setIsSending(false)
     }
   }
 
@@ -46,10 +55,11 @@ export function ContactForm({ data }) {
           Message
           <textarea name="message" rows="5" required />
         </label>
-        <button className="primary-button" type="submit">
-          <FiSend /> Send Message
+        <input type="hidden" name="to_email" value={data.emailjs.toEmail} />
+        <button className="primary-button" type="submit" disabled={isSending}>
+          <FiSend /> {isSending ? 'Sending...' : 'Send Message'}
         </button>
-        {status && <p className="form-status">{status}</p>}
+        {status.message && <p className={`form-status ${status.type}`} role="status">{status.message}</p>}
       </form>
     </div>
   )

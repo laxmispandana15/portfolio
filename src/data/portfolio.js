@@ -2,9 +2,9 @@ export const portfolio = {
   name: 'Bollam Laxmi Spandana',
   role: 'AI/ML Researcher | Full Stack Developer | B.Tech CSE Student',
   intro:
-    'Computer Science Engineering student focused on building practical AI systems, research-backed machine learning pipelines, and full stack products that solve real human problems.',
+    'CSE student building practical AI systems, research prototypes, and full stack products for real-world impact.',
   summary:
-    'I am a B.Tech CSE student at SR University with strong interests in Artificial Intelligence, Machine Learning, Data Science, Brain-Computer Interfaces, and Full Stack Development. My work combines research curiosity with production-minded engineering across deep learning, web platforms, and assistive technology.',
+    'B.Tech CSE student at SR University focused on Artificial Intelligence, Machine Learning, Data Science, Brain-Computer Interfaces, and Full Stack Development.',
   assets: {
     profilePhoto: '/assets/images/profile.jpeg',
     nccPhoto: '/assets/images/ncc.jpeg',
@@ -21,6 +21,7 @@ export const portfolio = {
     serviceId: 'YOUR_EMAILJS_SERVICE_ID',
     templateId: 'YOUR_EMAILJS_TEMPLATE_ID',
     publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+    toEmail: 'spandanabollam15@gmail.com',
   },
   education: [
     { title: 'B.Tech CSE', place: 'SR University', period: '2023-2027', detail: 'CGPA: 8.3' },
@@ -54,7 +55,7 @@ export const portfolio = {
       description:
         'Developed a Brain-Computer Interface system that converts EEG signals into readable text using CNN-GRU deep learning models and ESP32 integration.',
       links: [
-        { label: 'Research Paper', url: '#' },
+        { label: 'Research Paper', url: 'https://ieeexplore.ieee.org/abstract/document/11364854' },
       ],
     },
     {

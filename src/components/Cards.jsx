@@ -16,19 +16,23 @@ export function GlassCard({ children, className = '', delay = 0 }) {
 }
 
 export function ProjectCard({ project, index }) {
+  const visibleLinks = project.links.filter((link) => link.url && link.url !== '#')
+
   return (
     <GlassCard className="project-card" delay={index * 0.08}>
       <div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
       </div>
-      <div className="card-actions">
-        {project.links.map((link) => (
-          <a key={link.label} href={link.url} target={link.url === '#' ? undefined : '_blank'} rel="noreferrer">
-            {link.label} <FiExternalLink />
-          </a>
-        ))}
-      </div>
+      {visibleLinks.length > 0 && (
+        <div className="card-actions">
+          {visibleLinks.map((link) => (
+            <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
+              {link.label} <FiExternalLink />
+            </a>
+          ))}
+        </div>
+      )}
     </GlassCard>
   )
 }
